@@ -1,11 +1,22 @@
 {
   "private": true,
   "scripts": {
-    "fmt": "prettier --write \"extension/**/*.{ts,js}\""
+    "fmt": "prettier --write \"extension/**/*.{ts,js}\"",
+    "fmt:check": "prettier --check \"extension/**/*.{ts,js}\"",
+    "format-code": "npx prettier --write . ",
+    "icons:check": "python test/check-icons.py",
+    "manifest:check": "python test/check-v3-manifest.py",
+    "rules:check": "node test/check-rules.js",
+    "release": "bash release-archive.sh",
+    "firefox-test": "bash tools/firefox-web-ext.sh",
+    "chromium-test": "bash tools/chromium.sh"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.139",
-    "prettier": "^2.3.0",
-    "typescript": "^4.2.4"
+    "@types/chrome": "^0.0.323",
+    "npm-check": "^6.0.1",
+    "pnpm": "^10.11.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "web-ext": "^8.7.0"
   }
 }
